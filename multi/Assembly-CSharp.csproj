@@ -48,10 +48,13 @@
   <ItemGroup>
      <Compile Include="Assets\scripts\BallHandler.cs" />
      <Compile Include="Assets\scripts\ControlCharacter.cs" />
+     <Compile Include="Assets\scripts\ControlRedCharacter.cs" />
      <Compile Include="Assets\scripts\CooldownCounter.cs" />
      <Compile Include="Assets\scripts\GameController.cs" />
+     <Compile Include="Assets\scripts\GameSet.cs" />
      <Compile Include="Assets\scripts\Grass.cs" />
      <Compile Include="Assets\scripts\Half.cs" />
+     <Compile Include="Assets\scripts\MoveCharacter.cs" />
      <Compile Include="Assets\scripts\PenatlyBox.cs" />
      <Compile Include="Assets\scripts\ScoreArea.cs" />
      <Compile Include="Assets\scripts\ShotHandler.cs" />
