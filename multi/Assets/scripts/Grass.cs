@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Grass : MonoBehaviour {
     Color[] c;
-    int time;
+    float time;
 
 	void Start () 
     {
@@ -15,10 +15,13 @@ public class Grass : MonoBehaviour {
 
 	void Update () 
     {
-        time = (int)Time.time;
-        time %= 60;
+        time += Time.deltaTime;
 
-        GetComponent<Material>().SetColor(0, c[time]);
+        if (time >= 0.2f)
+        {
+            gameObject.GetComponent<MeshRenderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+            time = 0;
+        }
 	}
 
     void setColorsInATable(int a, out Color[] c)

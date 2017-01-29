@@ -17,9 +17,6 @@ public class PenatlyBox : MonoBehaviour {
         if (isBallIn)
         {
             timer += Time.deltaTime;
-
-            if (timer >= timeInBox)
-                Debug.Log("nom");
         }
         else
         {

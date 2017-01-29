@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
         wall1.GetComponent<wallInGate>().BringBackToLife();
         wall2.GetComponent<wallInGate>().BringBackToLife();
 
-        player1.GetComponent<ControlCharacter>().ResetCooldowns();
-        player2.GetComponent<ControlCharacter>().ResetCooldowns();
+        player1.transform.GetChild(0).GetComponent<ControlCharacter>().ResetCooldowns();
+        player2.transform.GetChild(0).GetComponent<ControlCharacter>().ResetCooldowns();
     }
 }
