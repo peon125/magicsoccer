@@ -10,11 +10,13 @@ public class BlackChoosingSet : MonoBehaviour
     public GameObject[] setsGOs;
     GameSet gameSetter;
     GameObject selectionArrow;
+    Settings settings;
     string[] sets;
     int selectedSet;
 
     void Start() 
     {
+        settings = GameObject.Find("settings").GetComponent<Settings>();
         sets = new string[3];
         sets[0] = "skill2Set1";
         sets[1] = "skill2Set2";
@@ -25,6 +27,11 @@ public class BlackChoosingSet : MonoBehaviour
 
     void Update ()
     {    
+        if (settings.getIsPaused())
+        {
+            return;
+        }
+
         if (Input.anyKeyDown)
         {
             for (int i = 0; i < sets.Length; i++)
@@ -48,12 +55,13 @@ public class BlackChoosingSet : MonoBehaviour
                     {
                         selectedSet = -1;
                         pressToSelect.SetActive(true);
-                        return;
                     }
-
-                    selectedSet = i;
-                    pressToSelect.SetActive(false);
-                    selectionArrow = Instantiate(arrow, new Vector3(t.position.x + 30, t.position.y), new Quaternion(0, 90, 0, 0), t) as GameObject;
+                    else
+                    {
+                        selectedSet = i;
+                        pressToSelect.SetActive(false);
+                        selectionArrow = Instantiate(arrow, new Vector3(t.position.x + 30, t.position.y), new Quaternion(0, 90, 0, 0), t) as GameObject;
+                    }
                     gameSetter.setBlackSelectedSet(i);
                 }
             }

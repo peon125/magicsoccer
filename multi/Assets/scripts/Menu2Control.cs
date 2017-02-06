@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Menu2Control : MonoBehaviour 
 {
-    public GameObject[] characters;
+    //public GameObject[] characters;
     public Sprite[] smallPics, bigPics;
     public Transform whiteList, blackList;
     public Image imgPrefab;
@@ -13,7 +13,7 @@ public class Menu2Control : MonoBehaviour
 
 	void Start () 
     {
-        for (int i = 0; i < characters.Length; i++)
+        for (int i = 0; i < smallPics.Length; i++)
         {
             imgPrefab.sprite = smallPics[i];
             Instantiate(imgPrefab, new Vector3(whiteList.transform.position.x, whiteList.transform.position.y - i * distOnList, 0), new Quaternion(0, 0, 0, 0), whiteList);
@@ -21,8 +21,8 @@ public class Menu2Control : MonoBehaviour
         }
 	}
 
-    public GameObject[] getCharacters()
-    {
-        return characters;
-    }
+    //public GameObject[] getCharacters()
+    //{
+    //    return characters;
+    //}
 }

@@ -7,7 +7,7 @@ public class GameSet : MonoBehaviour
     public GameObject[] characters;
     public AudioClip dadadedadadada;
     int whiteSelectedSet, blackSelectedSet;
-    string[] set1, set2, set3;
+    string[] set0, set1, set2, set3;
     int whiteIndex, blackIndex;
 
 	void Start() 
@@ -19,6 +19,7 @@ public class GameSet : MonoBehaviour
         whiteSelectedSet = -1;
         blackSelectedSet = -1;
 
+        set0 = new string[4];
         set1 = new string[4];
         set2 = new string[4];
         set3 = new string[4];
@@ -31,21 +32,24 @@ public class GameSet : MonoBehaviour
             set2[i] = "skill" + i + "Set2";
             set3[i] = "skill" + i + "Set3";
         }
+        for (int i = 0; i < set0.Length; i++)
+        {
+            set0[i] = "0";
+        }
 	}
 
     public string[] getWhiteSet()
     {
         switch (whiteSelectedSet)
         {
+            case -1:
+                return set0;
             case 0:
                 return set1;
-                break;
             case 1:
                 return set2;
-                break;
             case 2:
                 return set3;
-                break;
         }
 
         return new string[0];
@@ -65,6 +69,8 @@ public class GameSet : MonoBehaviour
     {
         switch (blackSelectedSet)
         {
+            case -1:
+                return set0;
             case 0:
                 return set1;
             case 1:
@@ -74,6 +80,11 @@ public class GameSet : MonoBehaviour
         }
 
         return new string[0];
+    }
+
+    public GameObject[] getCharacters()
+    {
+        return characters;
     }
 
     public int getBlackSelectedSet()

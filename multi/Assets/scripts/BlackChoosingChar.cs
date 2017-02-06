@@ -6,25 +6,36 @@ public class BlackChoosingChar : MonoBehaviour
 {
     public Menu2Control gameController;
     public GameObject arrowPrefab;
-    GameSet gameSetter;
+    public Transform listT;
     GameObject[] characters;
+    GameObject arrow;
+    GameSet gameSetter;
+    Settings settings;
     string[] buttonsSet;
     int index;
-    GameObject arrow;
-    Transform listT;
 
     void Start()
     {
+        settings = GameObject.Find("settings").GetComponent<Settings>();
         index = 0;
         gameSetter = GameObject.Find("gameSetter").GetComponent<GameSet>();
         buttonsSet = gameSetter.getBlackSet();
-        characters = gameController.getCharacters();
-        listT = transform.GetChild(0);
+        characters = gameSetter.getCharacters();
         arrow = Instantiate(arrowPrefab, new Vector3(listT.position.x + 30, listT.position.y, 0), new Quaternion(0, 90, 0, 0), transform) as GameObject;
+        if (buttonsSet[0] == "0")
+        {
+            Debug.Log("uzyskałem samoświadomość");
+            IAmABot();
+        }
     }
 
     void Update()
     {
+        if (settings.getIsPaused())
+        {
+            return;
+        }
+
         if(Input.GetButtonDown(buttonsSet[0]))
         {
             if (Input.GetAxis(buttonsSet[0]) < 0)
@@ -47,5 +58,12 @@ public class BlackChoosingChar : MonoBehaviour
             gameSetter.setBlackCharacter(index);
             Input.ResetInputAxes();
         }
+    }
+
+    void IAmABot()
+    {
+        index = Random.Range(0, characters.Length);
+        gameSetter.setBlackCharacter(index);
+        arrow.SetActive(false);
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 using UnityEngine.SceneManagement;
 
 public class WhiteChoosingSet : MonoBehaviour 
@@ -11,11 +10,13 @@ public class WhiteChoosingSet : MonoBehaviour
     public GameObject[] setsGOs;
     GameSet gameSetter;
     GameObject selectionArrow;
+    Settings settings;
     string[] sets;
     int selectedSet;
 
     void Start() 
     {
+        settings = GameObject.Find("settings").GetComponent<Settings>();
         sets = new string[3];
         sets[0] = "skill1Set1";
         sets[1] = "skill1Set2";
@@ -25,7 +26,12 @@ public class WhiteChoosingSet : MonoBehaviour
     }
 
     void Update ()
-    {    
+    {   
+        if (settings.getIsPaused())
+        {
+            return;
+        }
+
         if (Input.anyKeyDown)
         {
             for (int i = 0; i < sets.Length; i++)
@@ -60,7 +66,7 @@ public class WhiteChoosingSet : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && GetComponent<BlackChoosingSet>().getSelectedSet() != -1 && selectedSet != -1)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             SceneManager.LoadScene("menu2");
         }

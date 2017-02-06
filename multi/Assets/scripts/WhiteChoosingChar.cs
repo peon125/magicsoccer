@@ -7,26 +7,36 @@ public class WhiteChoosingChar : MonoBehaviour
 {
     public Menu2Control gameController;
     public GameObject arrowPrefab;
-    GameSet gameSetter;
+    public Transform listT;
     GameObject[] characters;
+    GameObject arrow;
+    GameSet gameSetter;
+    Settings settings;
     string[] buttonsSet;
     int index;
-    GameObject arrow;
-    Transform listT;
 
 	void Start()
     {
+        settings = GameObject.Find("settings").GetComponent<Settings>();
         index = 0;
         gameSetter = GameObject.Find("gameSetter").GetComponent<GameSet>();
         buttonsSet = gameSetter.getWhiteSet();
-        characters = gameController.getCharacters();
-        listT = transform.GetChild(0);
+        characters = gameSetter.getCharacters();
         arrow = Instantiate(arrowPrefab, new Vector3(listT.position.x - 30, listT.position.y, 0), new Quaternion(0, 0, 0, 0), transform) as GameObject;
+        if (buttonsSet[0] == "0")
+        {
+            IAmABot();
+        }
 	}
 	
 	void Update()
     {
-        if(Input.GetButtonDown(buttonsSet[0]))
+        if (settings.getIsPaused())
+        {
+            return;
+        }
+
+        if (Input.GetButtonDown(buttonsSet[0]))
         {
             if (Input.GetAxis(buttonsSet[0]) < 0)
             {
@@ -36,7 +46,8 @@ public class WhiteChoosingChar : MonoBehaviour
                     arrow.transform.position -= new Vector3(0, 50, 0);
                 }
 
-            } else if(Input.GetAxis(buttonsSet[0]) > 0)
+            }
+            else if (Input.GetAxis(buttonsSet[0]) > 0)
             {
                 if (index > 0)
                 {
@@ -49,7 +60,14 @@ public class WhiteChoosingChar : MonoBehaviour
             Input.ResetInputAxes();
         }
 
-        if(Input.GetKey(KeyCode.Return))
+        if (Input.GetKey(KeyCode.Return))
             SceneManager.LoadScene("scena1");
-	}
+    }
+
+    void IAmABot()
+    {
+        index = Random.Range(0, characters.Length);
+        gameSetter.setWhiteCharacter(index);
+        arrow.SetActive(false);
+    }
 }

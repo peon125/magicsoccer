@@ -10,26 +10,49 @@ public class ControlCharacter : MonoBehaviour
     public float[] delays;
     public float speed, boundary;
     public float[] cooldowns;
+    Transform bulletsTransform;
+    GameObject ball;
     CooldowsHandler cooldownsHandler;
     Text[] cooldownTexts;
     float characterDefaultXPosistion;
     string[] buttons;
+    bool isABot;
 
     void Start() 
     {
+        isABot = false;
         PlayerHandler ph = transform.parent.GetComponent<PlayerHandler>();
         buttons =  ph.getButtons();
         cooldownTexts = ph.getCooldownTexts();
         characterDefaultXPosistion = transform.position.x;
         cooldowns = new float[3];
         cooldownsHandler = ph.cooldownHandler;
+        bulletsTransform = GameObject.Find("bullets").transform;
+
+        if (buttons[0] == "0")
+        {
+            isABot = true;
+            ball = GameObject.FindGameObjectWithTag("ball");
+        }
     }
 
     void Update() 
     {
-        Move();
+        if (isABot)
+            IAmABot();
+        else
+        {
+            Move();
 
-        Shoot();
+            Shoot();
+        }
+
+        for (int i = 0; i < cooldowns.Length; i++)
+        {
+            cooldowns[i] -= Time.deltaTime;
+        }
+
+        cooldownsHandler.setCooldowns(cooldowns);
     }
 
     void Move()
@@ -45,7 +68,24 @@ public class ControlCharacter : MonoBehaviour
             int i = j - 1;
             if (Input.GetButtonDown(buttons[j]) && cooldowns[i] <= 0)
             {
-                GameObject shot = Instantiate(firesPrefabs[i], firesPrefabs[i].transform.position + transform.position, firesPrefabs[i].transform.rotation);
+                GameObject shot = Instantiate(firesPrefabs[i], firesPrefabs[i].transform.position + transform.position, firesPrefabs[i].transform.rotation, bulletsTransform);
+                ShotHandler shotHandler = shot.GetComponent<ShotHandler>();
+                shotHandler.setColorToChangeOn(transform.GetChild(0).GetComponent<Renderer>().material.color);
+                shotHandler.setwhatShotAmI(i);
+
+                cooldowns[i] = delays[i];
+                break;
+            }
+        }
+    }
+
+    void IAmABot()
+    {
+        for (int i = 0; i < cooldowns.Length; i++)
+        {
+            if (cooldowns[i] <= 0)
+            {
+                GameObject shot = Instantiate(firesPrefabs[i], firesPrefabs[i].transform.position + transform.position, firesPrefabs[i].transform.rotation, bulletsTransform);
                 ShotHandler shotHandler = shot.GetComponent<ShotHandler>();
                 shotHandler.setColorToChangeOn(transform.GetChild(0).GetComponent<Renderer>().material.color);
                 shotHandler.setwhatShotAmI(i);
@@ -55,12 +95,14 @@ public class ControlCharacter : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < cooldowns.Length; i++)
+        if (ball.transform.position.z > transform.position.z)
         {
-            cooldowns[i] -= Time.deltaTime;
+            transform.position += new Vector3(0, 0, speed);
         }
-
-        cooldownsHandler.setCooldowns(cooldowns);
+        else
+        {
+            transform.position -= new Vector3(0, 0, speed);
+        }
     }
 
     public void ResetCooldowns()

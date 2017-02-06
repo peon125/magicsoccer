@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PenatlyBox : MonoBehaviour {
     public float timeInBox;
+    public GameObject yellowChar;
     bool isBallIn;
     float timer;
 
