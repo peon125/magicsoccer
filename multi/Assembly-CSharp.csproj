@@ -46,7 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FrostWall.cs" />
      <Compile Include="Assets\scripts\BallHandler.cs" />
      <Compile Include="Assets\scripts\BlackChoosingChar.cs" />
      <Compile Include="Assets\scripts\BlackChoosingSet.cs" />
@@ -55,6 +54,8 @@
      <Compile Include="Assets\scripts\ControlRedCharacter.cs" />
      <Compile Include="Assets\scripts\CooldownCounter.cs" />
      <Compile Include="Assets\scripts\CooldowsHandler.cs" />
+     <Compile Include="Assets\scripts\FrostPlayerControl.cs" />
+     <Compile Include="Assets\scripts\FrostWall.cs" />
      <Compile Include="Assets\scripts\GameController.cs" />
      <Compile Include="Assets\scripts\GameSet.cs" />
      <Compile Include="Assets\scripts\Grass.cs" />

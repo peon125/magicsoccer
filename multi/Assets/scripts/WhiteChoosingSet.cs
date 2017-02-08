@@ -9,13 +9,14 @@ public class WhiteChoosingSet : MonoBehaviour
     public Transform canvasTransform;
     public GameObject[] setsGOs;
     GameSet gameSetter;
-    GameObject selectionArrow;
+    GameObject selectionArrow, pressToSelect;
     Settings settings;
     string[] sets;
     int selectedSet;
 
     void Start() 
     {
+        pressToSelect = new GameObject();
         settings = GameObject.Find("settings").GetComponent<Settings>();
         sets = new string[3];
         sets[0] = "skill1Set1";
@@ -39,7 +40,6 @@ public class WhiteChoosingSet : MonoBehaviour
                 if (Input.GetButtonDown(sets[i]) && GetComponent<BlackChoosingSet>().getSelectedSet() != i)
                 {
                     Transform t = setsGOs[i].transform;
-                    GameObject pressToSelect = new GameObject();
                     foreach (Transform child in t)
                     {
                         if (child.tag == "pressToSelect")
@@ -55,13 +55,15 @@ public class WhiteChoosingSet : MonoBehaviour
                     {
                         selectedSet = -1;
                         pressToSelect.SetActive(true);
-                        return;
+                        gameSetter.setWhiteSelectedSet(-1);
                     }
-
-                    selectedSet = i;
-                    pressToSelect.SetActive(false);
-                    selectionArrow = Instantiate(arrow, new Vector3(t.position.x - 30, t.position.y), new Quaternion(0, 0, 0, 0), t) as GameObject;
-                    gameSetter.setWhiteSelectedSet(i);
+                    else
+                    {
+                        selectedSet = i;
+                        pressToSelect.SetActive(false);
+                        selectionArrow = Instantiate(arrow, new Vector3(t.position.x - 30, t.position.y), new Quaternion(0, 0, 0, 0), t) as GameObject;
+                        gameSetter.setWhiteSelectedSet(i);
+                    }
                 }
             }
         }

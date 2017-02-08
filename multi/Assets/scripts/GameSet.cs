@@ -82,19 +82,19 @@ public class GameSet : MonoBehaviour
         return new string[0];
     }
 
-    public GameObject[] getCharacters()
-    {
-        return characters;
-    }
-
     public int getBlackSelectedSet()
     {
         return blackSelectedSet;
     }
-
+    
     public void setBlackSelectedSet(int i)
     {
         blackSelectedSet = i;
+    }
+
+    public GameObject[] getCharacters()
+    {
+        return characters;
     }
 
     public GameObject getWhiteCharacter()
