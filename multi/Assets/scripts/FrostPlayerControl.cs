@@ -65,19 +65,34 @@ public class FrostPlayerControl : MonoBehaviour
     {
         if(Input.GetButtonDown(buttons[1]))
         {
-            GameObject shot = Instantiate(firesPrefabs[1], firesPrefabs[1].transform.position + transform.position, firesPrefabs[1].transform.rotation, bulletsTransform);
-            ShotHandler shotHandler = shot.GetComponent<ShotHandler>();
-            shotHandler.setColorToChangeOn(transform.GetChild(0).GetComponent<Renderer>().material.color);
-            shotHandler.setwhatShotAmI(1);
+            Debug.Log("a");
+            GameObject shot = Instantiate(firesPrefabs[0], firesPrefabs[0].transform.position + transform.position, firesPrefabs[0].transform.rotation, bulletsTransform) as GameObject;
+            shot.transform.GetChild(0).GetComponent<Renderer>().material.color = transform.GetChild(0).GetComponent<Renderer>().material.color;
         }
 
         if(Input.GetButtonDown(buttons[2]))
         {
-            GameObject wall = Instantiate(firesPrefabs[1], firesPrefabs[1].transform.position + transform.position, firesPrefabs[1].transform.rotation, bulletsTransform);
+            float position = 0;
+            if (transform.position.x > 0)
+            {
+                position = transform.position.x - 40;
+            }
+            else
+            {
+                position = transform.position.x + 40;
+            }
+            Vector3 pos = new Vector3(position, firesPrefabs[1].transform.position.y, transform.position.z);
+            GameObject wall = Instantiate(firesPrefabs[1], pos, firesPrefabs[1].transform.rotation, bulletsTransform) as GameObject;
             wall.GetComponent<MeshRenderer>().material.color = transform.GetChild(0).GetComponent<Renderer>().material.color;
             //ShotHandler shotHandler = shot.GetComponent<ShotHandler>();
             //shotHandler.setColorToChangeOn(transform.GetChild(0).GetComponent<Renderer>().material.color);
             //shotHandler.setwhatShotAmI(1);
+        }
+
+        if(Input.GetButtonDown(buttons[3]))
+        {
+            GameObject shot = Instantiate(firesPrefabs[2], firesPrefabs[2].transform.position + transform.position, firesPrefabs[2].transform.rotation, bulletsTransform) as GameObject;
+            shot.transform.GetChild(0).GetComponent<Renderer>().material.color = transform.GetChild(0).GetComponent<Renderer>().material.color;
         }
     }
 

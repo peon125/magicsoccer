@@ -7,11 +7,12 @@
       <File FileName="Assets\scripts\GameSet.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\WhiteChoosingChar.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\BlackChoosingChar.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\PlayerHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\PlayerHandler.cs" Line="27" Column="1" />
       <File FileName="Assets\scripts\ControlCharacter.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\BlackChoosingSet.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\WhiteChoosingSet.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\FrostPlayerControl.cs" Line="80" Column="15" />
+      <File FileName="Assets\scripts\FrostPlayerControl.cs" Line="68" Column="28" />
+      <File FileName="Assets\scripts\ShotHandler.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
