@@ -16,7 +16,7 @@ public class FrostPlayerControl : MonoBehaviour
     Text[] cooldownTexts;
     float characterDefaultXPosistion;
     string[] buttons;
-    bool isABot;
+    bool isABot, canFireSuperShot;
 
     void Start() 
     {
@@ -28,6 +28,7 @@ public class FrostPlayerControl : MonoBehaviour
         cooldowns = new float[3];
         cooldownsHandler = ph.cooldownHandler;
         bulletsTransform = GameObject.Find("bullets").transform;
+        canFireSuperShot = false;
 
         if (buttons[0] == "0")
         {
@@ -63,15 +64,25 @@ public class FrostPlayerControl : MonoBehaviour
 
     void Shoot()
     {
-        if(Input.GetButtonDown(buttons[1]))
+        if(Input.GetButtonDown(buttons[1]) && cooldowns[0] <= 0)
         {
+<<<<<<< HEAD
             Debug.Log("a");
             GameObject shot = Instantiate(firesPrefabs[0], firesPrefabs[0].transform.position + transform.position, firesPrefabs[0].transform.rotation, bulletsTransform) as GameObject;
             shot.transform.GetChild(0).GetComponent<Renderer>().material.color = transform.GetChild(0).GetComponent<Renderer>().material.color;
+=======
+            GameObject shot = Instantiate(firesPrefabs[0], firesPrefabs[0].transform.position + transform.position, firesPrefabs[0].transform.rotation, bulletsTransform) as GameObject;
+            ShotHandler shotHandler = shot.GetComponent<ShotHandler>();
+            //shotHandler.setColorToChangeOn(transform.GetChild(0).GetComponent<Renderer>().material.color);
+            shotHandler.setwhatShotAmI(0);
+            shot.GetComponent<MeshRenderer>().material.color = transform.GetChild(0).GetComponent<Renderer>().material.color;
+            cooldowns[0] = delays[0];
+>>>>>>> 99f15bb8143166dea26051fd54609809065d035b
         }
 
-        if(Input.GetButtonDown(buttons[2]))
+        if(Input.GetButtonDown(buttons[2]) && cooldowns[1] <= 0)
         {
+<<<<<<< HEAD
             float position = 0;
             if (transform.position.x > 0)
             {
@@ -82,11 +93,39 @@ public class FrostPlayerControl : MonoBehaviour
                 position = transform.position.x + 40;
             }
             Vector3 pos = new Vector3(position, firesPrefabs[1].transform.position.y, transform.position.z);
+=======
+            float posX = 0;
+            if (transform.position.x > 0)
+            {
+                posX = transform.position.x - 40;
+            }
+            else
+            {
+                posX = transform.position.x + 40;
+            }
+
+            Vector3 pos = new Vector3(posX, firesPrefabs[1].transform.position.y, transform.position.z);
+
+>>>>>>> 99f15bb8143166dea26051fd54609809065d035b
             GameObject wall = Instantiate(firesPrefabs[1], pos, firesPrefabs[1].transform.rotation, bulletsTransform) as GameObject;
             wall.GetComponent<MeshRenderer>().material.color = transform.GetChild(0).GetComponent<Renderer>().material.color;
-            //ShotHandler shotHandler = shot.GetComponent<ShotHandler>();
+
+            cooldowns[1] = delays[1];
+        }
+
+        if(Input.GetButtonDown(buttons[2] && canFireSuperShot))
+        {
+            
+        }
+
+        if(Input.GetButtonDown(buttons[3]) && cooldowns[2] <= 0)
+        {
+            GameObject shot = Instantiate(firesPrefabs[2], firesPrefabs[2].transform.position + transform.position, firesPrefabs[2].transform.rotation, bulletsTransform) as GameObject;
+            ShotHandler shotHandler = shot.GetComponent<ShotHandler>();
             //shotHandler.setColorToChangeOn(transform.GetChild(0).GetComponent<Renderer>().material.color);
-            //shotHandler.setwhatShotAmI(1);
+            shotHandler.setwhatShotAmI(1);
+            shot.GetComponent<MeshRenderer>().material.color = transform.GetChild(0).GetComponent<Renderer>().material.color;
+            cooldowns[2] = delays[2];
         }
 
         if(Input.GetButtonDown(buttons[3]))
@@ -133,5 +172,15 @@ public class FrostPlayerControl : MonoBehaviour
     public float[] getCooldowns()
     {
         return cooldowns;
+    }
+
+    public void setCanFireSuperShot(bool b)
+    {
+        canFireSuperShot = b;
+
+        if(b)
+        {
+            cooldownTexts[1].transform.parent.GetComponent<Image>().color = Color.green;
+        }
     }
 }

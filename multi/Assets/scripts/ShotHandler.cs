@@ -22,7 +22,7 @@ public class ShotHandler : MonoBehaviour {
 
         GetComponent<Rigidbody>().velocity = new Vector3(speed, 0f, 0f);
 
-        gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = colorToChangeOn;
+        //gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = colorToChangeOn;
 	}
 
     void FixedUpdate()

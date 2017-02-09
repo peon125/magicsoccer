@@ -11,8 +11,13 @@
       <File FileName="Assets\scripts\ControlCharacter.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\BlackChoosingSet.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\WhiteChoosingSet.cs" Line="1" Column="1" />
+<<<<<<< HEAD
       <File FileName="Assets\scripts\FrostPlayerControl.cs" Line="68" Column="28" />
       <File FileName="Assets\scripts\ShotHandler.cs" Line="1" Column="1" />
+=======
+      <File FileName="Assets\scripts\FrostPlayerControl.cs" Line="96" Column="58" />
+      <File FileName="Assets\scripts\ShotHandler.cs" Line="25" Column="11" />
+>>>>>>> 99f15bb8143166dea26051fd54609809065d035b
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
