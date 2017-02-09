@@ -1,23 +1,9 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\FrostPlayerControl.cs">
     <Files>
-      <File FileName="Assets\scripts\Grass.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Settings.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\GameSet.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\WhiteChoosingChar.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\BlackChoosingChar.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\PlayerHandler.cs" Line="27" Column="1" />
-      <File FileName="Assets\scripts\ControlCharacter.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\BlackChoosingSet.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\WhiteChoosingSet.cs" Line="1" Column="1" />
-<<<<<<< HEAD
-      <File FileName="Assets\scripts\FrostPlayerControl.cs" Line="68" Column="28" />
-      <File FileName="Assets\scripts\ShotHandler.cs" Line="1" Column="1" />
-=======
-      <File FileName="Assets\scripts\FrostPlayerControl.cs" Line="96" Column="58" />
-      <File FileName="Assets\scripts\ShotHandler.cs" Line="25" Column="11" />
->>>>>>> 99f15bb8143166dea26051fd54609809065d035b
+      <File FileName="Assets\scripts\FrostPlayerControl.cs" Line="157" Column="30" />
+      <File FileName="Assets\scripts\FrostWall.cs" Line="22" Column="85" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
