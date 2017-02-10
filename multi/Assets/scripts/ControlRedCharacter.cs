@@ -50,7 +50,6 @@ public class ControlRedCharacter : MonoBehaviour {
                 GameObject shot = Instantiate(firesPrefabs[i], firesPrefabs[i].transform.position + transform.position, firesPrefabs[i].transform.rotation);
                 ShotHandler shotHandler = shot.GetComponent<ShotHandler>();
                 shotHandler.setColorToChangeOn(transform.GetChild(0).GetComponent<Renderer>().material.color);
-                shotHandler.setwhatShotAmI(i);
 
                 cooldowns[i] = delays[i];
                 break;

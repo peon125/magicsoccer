@@ -5,9 +5,9 @@ using UnityEngine;
 public class ShotHandler : MonoBehaviour {
     public float speed;
     public float force;
+    public int whatShotAmI;
     Vector3 passingVector;
     Color colorToChangeOn;
-    int whatShotAmI;
     
 	void Start()
     {
@@ -62,8 +62,8 @@ public class ShotHandler : MonoBehaviour {
         colorToChangeOn = c;
     }
 
-    public void setwhatShotAmI(int i)
+    /*public void setwhatShotAmI(int i)
     {
         whatShotAmI = i;
-    }
+    }*/
 }

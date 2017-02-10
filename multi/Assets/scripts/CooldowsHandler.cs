@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class CooldowsHandler : MonoBehaviour 
 {
@@ -15,30 +16,37 @@ public class CooldowsHandler : MonoBehaviour
 
 	void Update() 
     {
-        for (int i = 0; i < cooldowns.Length; i++)
+        try
         {
-            string textOnCounter = "";
+            for (int i = 0; i < cooldownsTexts.Length; i++)
+            {
+                string textOnCounter = "";
 
-            if (cooldowns[i] < 0)
-            {
-                textOnCounter = "0.0";
-            }
-            else
-            {
-                string cooldownText = cooldowns[i].ToString();
-                textOnCounter = cooldownText.Substring(0, cooldownText.IndexOf(".") + 2);
-            }
+                if (cooldowns[i] < 0)
+                {
+                    textOnCounter = "0.0";
+                }
+                else
+                {
+                    string cooldownText = cooldowns[i].ToString();
+                    textOnCounter = cooldownText.Substring(0, cooldownText.IndexOf(".") + 2);
+                }
 
-            cooldownsTexts[i].text = textOnCounter;
+                cooldownsTexts[i].text = textOnCounter;
 
-            if (cooldownsTexts[i].text != "0.0")
-            {
-                cooldownsTexts[i].transform.parent.GetComponent<Image>().color = Color.red;
+                if (cooldownsTexts[i].text != "0.0")
+                {
+                    cooldownsTexts[i].transform.parent.GetComponent<Image>().color = Color.red;
+                }
+                else
+                {
+                    cooldownsTexts[i].transform.parent.GetComponent<Image>().color = Color.green;
+                }
             }
-            else
-            {
-                cooldownsTexts[i].transform.parent.GetComponent<Image>().color = Color.green;
-            }
+        }
+        catch(Exception ex)
+        {
+            Debug.Log(ex);
         }
 	}
 
