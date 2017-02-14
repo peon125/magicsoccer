@@ -1,13 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\ControlRedCharacter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\GameController.cs">
     <Files>
-      <File FileName="Assets\scripts\FrostPlayerControl.cs" Line="105" Column="72" />
-      <File FileName="Assets\scripts\FrostWall.cs" Line="22" Column="85" />
+      <File FileName="Assets\scripts\FrostPlayerControl.cs" Line="77" Column="24" />
+      <File FileName="Assets\scripts\FrostWall.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\CooldowsHandler.cs" Line="47" Column="9" />
-      <File FileName="Assets\scripts\ControlCharacter.cs" Line="89" Column="111" />
-      <File FileName="Assets\scripts\ShotHandler.cs" Line="65" Column="7" />
+      <File FileName="Assets\scripts\ControlCharacter.cs" Line="87" Column="175" />
+      <File FileName="Assets\scripts\ShotHandler.cs" Line="46" Column="6" />
       <File FileName="Assets\scripts\ControlRedCharacter.cs" Line="52" Column="111" />
+      <File FileName="Assets\scripts\BlackChoosingChar.cs" Line="64" Column="19" />
+      <File FileName="Assets\scripts\GameController.cs" Line="37" Column="60" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

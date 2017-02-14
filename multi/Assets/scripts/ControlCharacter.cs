@@ -85,8 +85,7 @@ public class ControlCharacter : MonoBehaviour
             if (cooldowns[i] <= 0)
             {
                 GameObject shot = Instantiate(firesPrefabs[i], firesPrefabs[i].transform.position + transform.position, firesPrefabs[i].transform.rotation, bulletsTransform);
-                ShotHandler shotHandler = shot.GetComponent<ShotHandler>();
-                shotHandler.setColorToChangeOn(transform.GetChild(0).GetComponent<Renderer>().material.color);
+                shot.GetComponent<MeshRenderer>().material.color = transform.GetChild(0).GetComponent<Renderer>().material.color;
 
                 cooldowns[i] = delays[i];
                 break;

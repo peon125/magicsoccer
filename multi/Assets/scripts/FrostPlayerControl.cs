@@ -66,7 +66,6 @@ public class FrostPlayerControl : MonoBehaviour
         if(Input.GetButtonDown(buttons[1]) && cooldowns[0] <= 0)
         {
             GameObject shot = Instantiate(firesPrefabs[0], firesPrefabs[0].transform.position + transform.position, firesPrefabs[0].transform.rotation, bulletsTransform) as GameObject;
-            ShotHandler shotHandler = shot.GetComponent<ShotHandler>();
             shot.GetComponent<MeshRenderer>().material.color = transform.GetChild(0).GetComponent<Renderer>().material.color;
             cooldowns[0] = delays[0];
         }
@@ -74,9 +73,8 @@ public class FrostPlayerControl : MonoBehaviour
         if (Input.GetButtonDown(buttons[2]) && cooldowns[1] <= 0 && canFireSuperShot)
         {
             GameObject shot = Instantiate(firesPrefabs[3], firesPrefabs[3].transform.position + transform.position, firesPrefabs[3].transform.rotation, bulletsTransform) as GameObject;
-            ShotHandler shotHandler = shot.GetComponent<ShotHandler>();
             shot.GetComponent<MeshRenderer>().material.color = transform.GetChild(0).GetComponent<Renderer>().material.color;
-            cooldowns[3] = delays[3];
+            cooldowns[1] = delays[3];
 
             canFireSuperShot = false;
         }

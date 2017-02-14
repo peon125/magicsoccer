@@ -24,7 +24,6 @@ public class BlackChoosingChar : MonoBehaviour
         arrow = Instantiate(arrowPrefab, new Vector3(listT.position.x + 30, listT.position.y, 0), new Quaternion(0, 90, 0, 0), transform) as GameObject;
         if (buttonsSet[0] == "0")
         {
-            Debug.Log("uzyskałem samoświadomość");
             IAmABot();
         }
     }
@@ -62,7 +61,7 @@ public class BlackChoosingChar : MonoBehaviour
 
     void IAmABot()
     {
-        index = Random.Range(0, characters.Length);
+        index = 0;//Random.Range(0, characters.Length);
         gameSetter.setBlackCharacter(index);
         arrow.SetActive(false);
     }

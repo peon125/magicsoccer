@@ -21,14 +21,7 @@ public class ShotHandler : MonoBehaviour {
         force *= 1000;
 
         GetComponent<Rigidbody>().velocity = new Vector3(speed, 0f, 0f);
-
-        //gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = colorToChangeOn;
 	}
-
-    void FixedUpdate()
-    {
-        //transform.position += new Vector3(speed * Time.deltaTime, 0f, 0f);
-    }
 
     void OnCollisionEnter(Collision collid) 
     {
@@ -52,18 +45,8 @@ public class ShotHandler : MonoBehaviour {
         }
     }
 
-//    public float getStrikeForce()
-//    {
-//        return force * 1000;
-//    }
-
     public void setColorToChangeOn(Color c)
     {
         colorToChangeOn = c;
     }
-
-    /*public void setwhatShotAmI(int i)
-    {
-        whatShotAmI = i;
-    }*/
 }
