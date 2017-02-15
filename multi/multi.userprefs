@@ -1,17 +1,27 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\CharactersPic.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Menu2Control.cs">
     <Files>
-      <File FileName="Assets\scripts\FrostPlayerControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\FrostWall.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\CooldowsHandler.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\ControlCharacter.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\ShotHandler.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\ControlRedCharacter.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\BlackChoosingChar.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\CharactersPic.cs" Line="18" Column="32" />
+      <File FileName="Assets\scripts\WhiteChoosingChar.cs" Line="60" Column="49" />
+      <File FileName="Assets\scripts\BlackChoosingChar.cs" Line="58" Column="56" />
+      <File FileName="Assets\scripts\Menu2Control.cs" Line="36" Column="9" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="multi" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="scripts" expanded="True">
+                <Node name="Menu2Control.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

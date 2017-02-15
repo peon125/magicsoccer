@@ -57,10 +57,11 @@ public class WhiteChoosingChar : MonoBehaviour
             }
 
             gameSetter.setWhiteCharacter(index);
+            //gameController.setWhitePicsAndDesc(index);
             Input.ResetInputAxes();
         }
 
-        if (Input.GetKey(KeyCode.Return))
+        if (Input.GetKey(KeyCode.Return))        
             SceneManager.LoadScene("scena1");
     }
 
