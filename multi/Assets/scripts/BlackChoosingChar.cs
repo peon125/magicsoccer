@@ -55,9 +55,10 @@ public class BlackChoosingChar : MonoBehaviour
             }
 
             gameSetter.setBlackCharacter(index);
-            //gameController.setBlackPicsAndDesc(index);
             Input.ResetInputAxes();
         }
+
+        gameController.setBlackPicsAndDesc(index);
     }
 
     void IAmABot()
