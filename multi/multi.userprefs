@@ -1,16 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Menu2Control.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Settings.cs">
     <Files>
-      <File FileName="Assets\scripts\WhiteChoosingChar.cs" Line="62" Column="9" />
-      <File FileName="Assets\scripts\BlackChoosingChar.cs" Line="60" Column="9" />
-      <File FileName="Assets\scripts\Menu2Control.cs" Line="49" Column="31" />
+      <File FileName="Assets\scripts\WhiteChoosingChar.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\BlackChoosingChar.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Menu2Control.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Settings.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <RunToCursorBreakpoint file="D:\UnityProjects\Soccer\multi\Assets\scripts\Menu2Control.cs" line="37" column="9" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
